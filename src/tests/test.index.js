@@ -1,5 +1,5 @@
 const HttpProvider = require('../index.js'); // eslint-disable-line
-const TestRPC = require('ethereumjs-testrpc'); // eslint-disable-line
+const TestRPC = require('ganache-cli'); // eslint-disable-line
 const Eth = require('ethjs-query'); // eslint-disable-line
 const EthQuery = require('eth-query');
 const Web3 = require('web3');

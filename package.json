@@ -13,7 +13,7 @@
     "start": "npm test",
     "release": "npmpub",
     "pretest": "npm run lint",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "prebuild": "npm run build:clean && npm run test",
     "build:clean": "npm run test:clean && rimraf ./dist",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --copy-files",

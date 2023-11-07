@@ -207,8 +207,8 @@ describe('HttpProvider', () => {
 
         web3.eth.getBalance(accountsResult[0], (balanceError, balanceResult) => {
           assert.equal(balanceError, null);
-          assert.equal(typeof balanceResult, 'object');
-          assert.equal(balanceResult.toNumber(10) > 0, true);
+          assert.equal(typeof balanceResult, 'string');
+          assert.isAbove(parseInt(balanceResult, 10), 0);
 
           done();
         });
@@ -222,8 +222,8 @@ describe('HttpProvider', () => {
 
         web3.eth.getBalance(accountResult, (balanceError, balanceResult) => {
           assert.equal(balanceError, null);
-          assert.equal(typeof balanceResult, 'object');
-          assert.equal(balanceResult.toNumber(10) > 0, true);
+          assert.equal(typeof balanceResult, 'string');
+          assert.isAbove(parseInt(balanceResult, 10), 0);
 
           done();
         });

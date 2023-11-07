@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0]
+### Changed
+- **BREAKING**: Deprecate nodejs <8.17, npm<6 ([#11](https://github.com/MetaMask/ethjs-provider-http/pull/11))
+- **BREAKING**: Rename package from `ethjs-provider-http` to `@metamask/ethjs-provider-http` ([#10](https://github.com/MetaMask/ethjs-provider-http/pull/10))
+- Bump `xhr2` from 0.1.3 to 0.2.1 ([#7](https://github.com/MetaMask/ethjs-provider-http/pull/7))
+
 ## [0.1.6]
 ### Changed
 - Better handling of Errors like 405 etc..
@@ -22,7 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Basic docs
   - License
 
-[Unreleased]: https://github.com/MetaMask/ethjs-provider-http/compare/v0.1.6...HEAD
+[Unreleased]: https://github.com/MetaMask/ethjs-provider-http/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/MetaMask/ethjs-provider-http/compare/v0.1.6...v0.2.0
 [0.1.6]: https://github.com/MetaMask/ethjs-provider-http/compare/v0.1.3...v0.1.6
 [0.1.3]: https://github.com/MetaMask/ethjs-provider-http/compare/v0.0.1...v0.1.3
 [0.0.1]: https://github.com/MetaMask/ethjs-provider-http/releases/tag/v0.0.1

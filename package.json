@@ -24,7 +24,6 @@
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern **/**.min.js",
     "lint:js": "npm run lint:eslint -- . ",
-    "lint:staged": "lint-staged",
     "test:clean": "rimraf ./coverage",
     "test": "mocha ./src/tests/**/*.js -R spec --timeout 2000000 --require babel-core/register",
     "test:coverage": "istanbul cover ./node_modules/mocha/bin/_mocha -- src/tests/**/*.js -R spec --timeout 2000000 --require babel-core/register",
@@ -145,7 +144,6 @@
     "ganache-cli": "^6.12.2",
     "istanbul": "0.4.5",
     "json-loader": "^0.5.7",
-    "lint-staged": "1.0.1",
     "mocha": "^7.1.2",
     "pre-commit": "^1.2.2",
     "rimraf": "^3.0.2",
@@ -195,9 +193,6 @@
     "url": "https://github.com/MetaMask/ethjs-provider-http/issues"
   },
   "homepage": "https://github.com/MetaMask/ethjs-provider-http#readme",
-  "lint-staged": {
-    "lint:eslint": "*.js"
-  },
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",

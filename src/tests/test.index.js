@@ -5,6 +5,7 @@ const EthQuery = require('eth-query');
 const Web3 = require('web3');
 const assert = require('chai').assert; // eslint-disable-line
 const SandboxedModule = require('sandboxed-module');
+
 const server = TestRPC.server();
 server.listen(5002);
 

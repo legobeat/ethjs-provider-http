@@ -122,7 +122,7 @@ describe('HttpProvider', () => {
         eth.getBalance(accountsResult[0], (balanceError, balanceResult) => {
           assert.equal(balanceError, null);
           assert.equal(typeof balanceResult, 'object');
-          assert.equal(balanceResult.toNumber(10) > 0, true);
+          assert.equal(balanceResult.toString(), '100000000000000000000');
 
           done();
         });
@@ -137,7 +137,7 @@ describe('HttpProvider', () => {
         eth.getBalance(accountResult, (balanceError, balanceResult) => {
           assert.equal(balanceError, null);
           assert.equal(typeof balanceResult, 'object');
-          assert.equal(balanceResult.toNumber(10) > 0, true);
+          assert.equal(balanceResult.toString(), '100000000000000000000');
 
           done();
         });

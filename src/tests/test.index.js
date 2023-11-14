@@ -1,6 +1,7 @@
 const HttpProvider = require('../index.js'); // eslint-disable-line
 const TestRPC = require('ganache-cli'); // eslint-disable-line
 const Eth = require('ethjs-query'); // eslint-disable-line
+const MMEth = require('@metamask/ethjs-query');
 const EthQuery = require('eth-query');
 const Web3 = require('web3');
 const assert = require('chai').assert; // eslint-disable-line
@@ -96,6 +97,51 @@ describe('HttpProvider', () => {
         new HttpProvider(); // eslint-disable-line
       }
       assert.throws(invalidProvider, Error);
+    });
+  });
+
+  describe('test against @metamask/ethjs-query', () => {
+    const eth = new MMEth(new HttpProvider('http://localhost:5002'));
+
+    it('should get accounts', (done) => {
+      eth.accounts((accountsError, accountsResult) => {
+        assert.equal(accountsError, null);
+        assert.equal(typeof accountsResult, 'object');
+        assert.equal(Array.isArray(accountsResult), true);
+
+        done();
+      });
+    });
+
+    it('should get balances', (done) => {
+      eth.accounts((accountsError, accountsResult) => {
+        assert.equal(accountsError, null);
+        assert.equal(typeof accountsResult, 'object');
+        assert.equal(Array.isArray(accountsResult), true);
+
+        eth.getBalance(accountsResult[0], (balanceError, balanceResult) => {
+          assert.equal(balanceError, null);
+          assert.equal(typeof balanceResult, 'object');
+          assert.equal(balanceResult.toNumber(10) > 0, true);
+
+          done();
+        });
+      });
+    });
+
+    it('should get coinbase and balance', (done) => {
+      eth.coinbase((accountsError, accountResult) => {
+        assert.equal(accountsError, null);
+        assert.equal(typeof accountResult, 'string');
+
+        eth.getBalance(accountResult, (balanceError, balanceResult) => {
+          assert.equal(balanceError, null);
+          assert.equal(typeof balanceResult, 'object');
+          assert.equal(balanceResult.toNumber(10) > 0, true);
+
+          done();
+        });
+      });
     });
   });
 
